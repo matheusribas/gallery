@@ -1,7 +1,9 @@
 export function Favorites() {
   return (
-    <h1 className="text-3xl text-slate-900 dark:text-slate-50 font-bold">
-      Favorites
-    </h1>
+    <div className="flex justify-center">
+      <h1 className="text-3xl font-bold">
+        Favoritas
+      </h1>
+    </div>
   )
 }

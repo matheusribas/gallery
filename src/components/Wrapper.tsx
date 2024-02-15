@@ -3,9 +3,11 @@ import { Header } from "./Header";
 
 export function Wrapper() {
   return (
-    <div className="h-screen dark:bg-slate-900 bg-slate-100 flex flex-col items-center">
+    <div className="min-h-screen dark:bg-slate-900 bg-slate-100 dark:text-slate-100 text-slate-900">
       <Header />
-      <Outlet />
+      <main className="w-full max-w-[90rem] mx-auto">
+        <Outlet />
+      </main>
     </div>
   )
 }

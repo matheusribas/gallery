@@ -5,12 +5,14 @@ interface PropsLayout {
   children: ReactNode
 }
 
+// cor da logo = #d4b59d
+
 export function Layout({ children }: PropsLayout) {
   const { theme } = useTheme()
 
   return (
-    <main className={theme}>
+    <div className={theme}>
       {children}
-    </main>
+    </div>
   )
 }
