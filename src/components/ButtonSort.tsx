@@ -26,7 +26,7 @@ export function ButtonSort() {
         </button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content 
-        className="dark:bg-slate-400/10 bg-slate-500/10 rounded-md overflow-hidden min-w-60" 
+        className="shadow-[0_2px_10px] shadow-black/20 dark:bg-slate-800 bg-slate-300 rounded-md overflow-hidden min-w-60" 
         sideOffset={8}
         align="end"
       >
