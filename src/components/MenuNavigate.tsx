@@ -7,14 +7,14 @@ export function MenuNavigate() {
   }
 
   return (
-    <nav className="hidden sm:ml-6 sm:block h-full">
+    <nav className="hidden sm:block h-full">
       <ul className="flex space-x-10 h-full items-center">
         <NavLink 
           to="/"
           className={({ isActive }) => classNames(isActive 
-            ? 'dark:border-b-slate-500 border-b-slate-700 border-transparent border-b-2 dark:text-white text-slate-950'
-            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-b-2',
-            'px-5 py-2 font-semibold h-full flex items-center transition duration-200'
+            ? 'dark:border-b-slate-500 border-b-slate-700 border-y-2 dark:text-white text-slate-950'
+            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-y-2',
+            'px-8 py-2 font-bold h-full flex items-center border-t-transparent'
           )}
         >
           Todas
@@ -22,9 +22,9 @@ export function MenuNavigate() {
         <NavLink 
           to="/favorites"
           className={({ isActive }) => classNames(isActive 
-            ? 'dark:border-b-slate-500 border-b-slate-700 border-transparent border-b-2 dark:text-white text-slate-950'
-            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-b-2',
-            'px-5 py-2 font-semibold h-full flex items-center transition duration-200'
+            ? 'dark:border-b-slate-500 border-b-slate-700 border-y-2 dark:text-white text-slate-950'
+            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-y-2',
+            'px-8 py-2 font-bold h-full flex items-center border-t-transparent'
           )}
         >
           Favoritas
@@ -32,9 +32,9 @@ export function MenuNavigate() {
         <NavLink 
           to="/albums"
           className={({ isActive }) => classNames(isActive 
-            ? 'dark:border-b-slate-500 border-b-slate-700 border-transparent border-b-2 dark:text-white text-slate-950'
-            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-b-2',
-            'px-5 py-2 font-semibold h-full flex items-center transition duration-200'
+            ? 'dark:border-b-slate-500 border-b-slate-700 border-y-2 dark:text-white text-slate-950'
+            : 'dark:text-slate-300 text-slate-700 dark:hover:text-white hover:text-slate-900 hover:border-b-slate-700 hover:border-y-2',
+            'px-8 py-2 font-bold h-full flex items-center border-t-transparent'
           )}
         >
           Álbuns
