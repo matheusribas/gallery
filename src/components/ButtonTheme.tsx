@@ -11,7 +11,7 @@ export function ButtonTheme() {
 
   return (
     <button 
-      className="border-none dark:hover:bg-slate-700 hover:bg-slate-200 rounded-full p-2 transition duration-200 hover:-translate-y-1" 
+      className="hidden sm:block border-none dark:hover:bg-slate-700 hover:bg-slate-300/40 hover:text-slate-50 rounded-md p-2 transition duration-200 hover:-translate-y-1" 
       title={theme === 'light' ? "Mudar para tema escuro" : "Mudar para tema claro"}
       onClick={handleChangeTheme}
     >

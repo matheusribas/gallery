@@ -1,10 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { classNames } from "../utils/classNames";
 
 export function MenuNavigate() {
-
-  function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-  }
 
   return (
     <nav className="hidden sm:block h-full">
