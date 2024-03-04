@@ -1,9 +1,11 @@
+import { useState } from "react";
 import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
 import { LuHeart } from "react-icons/lu";
 
 import { ImageDB } from "../pages/Home";
+import { classNames } from "../utils/classNames";
 
 interface ItemImageProps {
   id: string;
@@ -20,6 +22,7 @@ interface MutationFavorite {
 export function ItemImage({ id, url, name, isFavorite }: ItemImageProps) {
 
   const queryClient = useQueryClient()
+  const [imgLoading, setImgLoading] = useState(true)
 
   async function patchFavorite({id , is_favorite}: MutationFavorite) {
     const response = await axios.patch(`http://localhost:8080/images/${id}`, {is_favorite})
@@ -49,12 +52,16 @@ export function ItemImage({ id, url, name, isFavorite }: ItemImageProps) {
       })
     },
     onError() {
-      toast.error("Erro ao favoritar/desfavoritar imagem.")
+      toast.error(`Erro ao ${!isFavorite ? "favoritar" : "desfavoritar"} imagem.`)
     }
   })
 
   function handleToggleFavorite() {
     mutation.mutate({ id, is_favorite: !isFavorite })
+  }
+
+  function handleImageLoaded() {
+    setImgLoading(false)
   }
 
   const tooltipButton = !isFavorite ? "Favoritar imagem" : "Desfavoritar imagem"
@@ -64,7 +71,8 @@ export function ItemImage({ id, url, name, isFavorite }: ItemImageProps) {
       <img
         src={url}
         alt={name}
-        className="h-full w-full object-cover"
+        className={classNames(imgLoading ? "animate-pulse" : "", "h-full w-full object-cover")}
+        onLoad={handleImageLoaded} 
       />
       <button 
         title={tooltipButton}

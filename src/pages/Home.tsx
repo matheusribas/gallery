@@ -50,6 +50,7 @@ export function Home() {
           </>
         ) : images.map(image => (
           <ItemImage 
+            key={image.id}
             id={image.id}
             isFavorite={image.is_favorite}
             name={image.name}
