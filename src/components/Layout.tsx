@@ -11,7 +11,7 @@ export function Layout({ children }: PropsLayout) {
   const { theme } = useTheme()
 
   return (
-    <div className={theme}>
+    <div className={theme} id="layout">
       {children}
     </div>
   )

@@ -25,72 +25,74 @@ export function ButtonSort() {
           <GoSortDesc size={18} /> <span>Ordenar</span>
         </button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content 
-        className="shadow-[0_2px_10px] shadow-black/20 dark:bg-slate-800 bg-slate-300 rounded-md overflow-hidden min-w-60" 
-        sideOffset={8}
-        align="end"
-      >
-        <DropdownMenu.Item 
-          onSelect={() => 
-            handleSelectedSort({
-              field: 'size',
-              order: 'ASC'
-            })
-          }
-          className={classNames(
-            (sort?.field === 'size' && sort?.order === 'ASC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
-            "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
-          )}
-          role='button'
+      <DropdownMenu.Portal container={document.getElementById('layout')}>
+        <DropdownMenu.Content 
+          className="z-10 shadow-[0_2px_10px] shadow-black/20 dark:bg-slate-800 bg-slate-300 rounded-md overflow-hidden min-w-60" 
+          sideOffset={8}
+          align="end"
         >
-          Tamanho em MB <span className="text-slate-400">crescente</span>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item 
-          onSelect={() => 
-            handleSelectedSort({
-              field: 'size',
-              order: 'DESC'
-            })
-          }
-          className={classNames(
-            (sort?.field === 'size' && sort?.order === 'DESC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
-            "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
-          )}
-          role='button'
-        >
-          Tamanho em MB <span className="text-slate-400">decrescente</span>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item 
-          onSelect={() => 
-            handleSelectedSort({
-              field: 'created_at',
-              order: 'ASC'
-            })
-          }
-          className={classNames(
-            (sort?.field === 'created_at' && sort?.order === 'ASC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
-            "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
-          )}
-          role='button'
-        >
-          Data de criação <span className="text-slate-400">crescente</span>
-        </DropdownMenu.Item>
-        <DropdownMenu.Item 
-          onSelect={() => 
-            handleSelectedSort({
-              field: 'created_at',
-              order: 'DESC'
-            })
-          }
-          className={classNames(
-            (sort?.field === 'created_at' && sort?.order === 'DESC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
-            "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
-          )}
-          role='button'
-        >
-          Data de criação <span className="text-slate-400">decrescente</span>
-        </DropdownMenu.Item>
-      </DropdownMenu.Content>
+          <DropdownMenu.Item 
+            onSelect={() => 
+              handleSelectedSort({
+                field: 'size',
+                order: 'ASC'
+              })
+            }
+            className={classNames(
+              (sort?.field === 'size' && sort?.order === 'ASC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
+              "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
+            )}
+            role='button'
+          >
+            Tamanho em MB <span className="text-slate-400">crescente</span>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item 
+            onSelect={() => 
+              handleSelectedSort({
+                field: 'size',
+                order: 'DESC'
+              })
+            }
+            className={classNames(
+              (sort?.field === 'size' && sort?.order === 'DESC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
+              "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
+            )}
+            role='button'
+          >
+            Tamanho em MB <span className="text-slate-400">decrescente</span>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item 
+            onSelect={() => 
+              handleSelectedSort({
+                field: 'created_at',
+                order: 'ASC'
+              })
+            }
+            className={classNames(
+              (sort?.field === 'created_at' && sort?.order === 'ASC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
+              "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
+            )}
+            role='button'
+          >
+            Data de criação <span className="text-slate-400">crescente</span>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item 
+            onSelect={() => 
+              handleSelectedSort({
+                field: 'created_at',
+                order: 'DESC'
+              })
+            }
+            className={classNames(
+              (sort?.field === 'created_at' && sort?.order === 'DESC') ? "dark:bg-slate-300/10 bg-slate-700/10" : '', 
+              "outline-none flex justify-between dark:hover:bg-slate-300/10 hover:bg-slate-700/10 dark:text-slate-100 text-slate-900 py-2 px-3 border-b border-black/5"
+            )}
+            role='button'
+          >
+            Data de criação <span className="text-slate-400">decrescente</span>
+          </DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
     </DropdownMenu.Root>
   )
 }

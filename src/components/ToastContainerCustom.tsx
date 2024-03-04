@@ -16,7 +16,6 @@ export function ToastContainerCustom() {
       draggable
       pauseOnHover
       theme="colored"
-      className="font-nunito"
     />
   )
 }
